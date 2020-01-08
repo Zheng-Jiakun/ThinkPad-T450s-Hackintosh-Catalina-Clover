@@ -17,7 +17,7 @@
 				<key>AddDTGP</key>
 				<false/>
 				<key>AddIMEI</key>
-				<true/>
+				<false/>
 				<key>AddMCHC</key>
 				<true/>
 				<key>AddPNLF</key>
@@ -95,7 +95,7 @@
 					<key>Comment</key>
 					<string>PCI.VID to PCI.IGPU#1</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					UENJMFZJRF8=
@@ -109,7 +109,7 @@
 					<key>Comment</key>
 					<string>PCI.VID to PCI.IGPU#2</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					VklEXwhfQURSDAAAAgA=
@@ -123,7 +123,7 @@
 					<key>Comment</key>
 					<string>GFX0 to IGPU</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					R0ZYMA==
@@ -193,7 +193,7 @@
 					<key>Comment</key>
 					<string>HDAS to HDEF</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					SERBUw==
@@ -715,7 +715,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>28</integer>
+			<string>No</string>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -723,10 +723,18 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,27,0</string>
+				<key>device_type</key>
+				<string>Audio device</string>
+				<key>hda-gfx</key>
+				<string>onboard-2</string>
 				<key>layout-id</key>
 				<data>
 				HAAAAA==
 				</data>
+				<key>model</key>
+				<string>Wildcat Point-LP High Definition Audio Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1c,0x01)/Pci(0x0)</key>
 			<dict>
@@ -765,37 +773,53 @@
 				<data>
 				AgAWFg==
 				</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,2,0</string>
 				<key>device-id</key>
 				<data>
 				FhYAAA==
+				</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>disable-external-gpu</key>
+				<data>
+				AQAAAA==
 				</data>
 				<key>enable-hdmi20</key>
 				<data>
 				AQAAAA==
 				</data>
+				<key>framebuffer-con1-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con1-type</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>framebuffer-con2-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con2-index</key>
+				<data>
+				/////w==
+				</data>
+				<key>framebuffer-con2-type</key>
+				<data>
+				AAgAAA==
+				</data>
 				<key>framebuffer-fbmem</key>
 				<data>
 				AACQAA==
-				</data>
-				<key>framebuffer-memorycount</key>
-				<data>
-				AwAAAA==
-				</data>
-				<key>framebuffer-mobile</key>
-				<data>
-				AQAAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-pipecount</key>
-				<data>
-				AwAAAA==
-				</data>
 				<key>framebuffer-portcount</key>
 				<data>
-				AwAAAA==
+				AgAAAA==
 				</data>
 				<key>framebuffer-stolenmem</key>
 				<data>
@@ -805,6 +829,8 @@
 				<data>
 				AAAAgA==
 				</data>
+				<key>model</key>
+				<string>Intel HD Graphics 5500</string>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -859,15 +885,6 @@
 	<dict>
 		<key>EDID</key>
 		<dict>
-			<key>Custom</key>
-			<data>
-			AP///////wAwrqNAAAAAAAAXAQSVHxF46vsFpFVQoCgPUFQAAAAB
-			AQEBAQEBAQEBAQEBAQEBFDeAuHA4JEAQZD4ANbAQAAAYFDeAuHA4
-			JEAQED4ANbAQAAAYAAAADwDRCTvRCTseCgAGrz0TAAAA/gBCMTQw
-			SEFOMDEuMyAKAOg=
-			</data>
-			<key>HorizontalSyncPulseWidth</key>
-			<string>0x64</string>
 			<key>Inject</key>
 			<false/>
 		</dict>
@@ -876,12 +893,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x16160002</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -940,7 +955,7 @@
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.14 Credits (Sniki)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				dkBI/wU=
