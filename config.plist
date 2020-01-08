@@ -17,7 +17,7 @@
 				<key>AddDTGP</key>
 				<false/>
 				<key>AddIMEI</key>
-				<false/>
+				<true/>
 				<key>AddMCHC</key>
 				<true/>
 				<key>AddPNLF</key>
@@ -95,7 +95,7 @@
 					<key>Comment</key>
 					<string>PCI.VID to PCI.IGPU#1</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					UENJMFZJRF8=
@@ -109,7 +109,7 @@
 					<key>Comment</key>
 					<string>PCI.VID to PCI.IGPU#2</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					VklEXwhfQURSDAAAAgA=
@@ -193,7 +193,7 @@
 					<key>Comment</key>
 					<string>HDAS to HDEF</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					SERBUw==
@@ -639,24 +639,6 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuSsdt</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>ProjSsdt</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
 				<string>ECDT</string>
 			</dict>
 		</array>
@@ -678,7 +660,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=0 keepsyms=1 brcmfx-country=#a debug=0x100</string>
+		<string>darkwake=0 keepsyms=1 brcmfx-country=#a applbkl=0</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
@@ -721,20 +703,54 @@
 		</dict>
 		<key>Properties</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device_type</key>
+				<string>Communication Controller</string>
+				<key>model</key>
+				<string>Intel Broadwell Wildcat Point-LP MEI Controller</string>
+				<key>name</key>
+				<string>Intel MEI Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x19,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device_type</key>
+				<string>Ethernet Controller</string>
+				<key>model</key>
+				<string>Intel Gigabit Local Area Network Ethernet Connection (3) I218-LM</string>
+				<key>name</key>
+				<string>Gigabit Ethernet Controller</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal@0,27,0</string>
-				<key>device_type</key>
-				<string>Audio device</string>
-				<key>hda-gfx</key>
-				<string>onboard-2</string>
-				<key>layout-id</key>
+				<string>Slot-1</string>
+				<key>PinConfigurations</key>
 				<data>
-				HAAAAA==
 				</data>
+				<key>device_type</key>
+				<string>Audio Device</string>
+				<key>layout-id</key>
+				<integer>32</integer>
 				<key>model</key>
-				<string>Wildcat Point-LP High Definition Audio Controller</string>
+				<string>Realtek High Definition Audio Controller (Intel Broadwell-U Wildcat Point-LP Audio)</string>
+				<key>name</key>
+				<string>Realtek High Definition Audio</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot-5</string>
+				<key>device_type</key>
+				<string>Card Reader</string>
+				<key>model</key>
+				<string>Realtek RTS5227 PCI Express Card Reader</string>
+				<key>name</key>
+				<string>Apple Memory Card Reader</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1c,0x01)/Pci(0x0)</key>
 			<dict>
@@ -751,44 +767,58 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x0)</key>
 			<dict>
-				<key>compatible</key>
-				<string>pci8086,9cc3</string>
-				<key>device-id</key>
-				<data>
-				w5wAAA==
-				</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>ISA Bridge</string>
+				<key>model</key>
+				<string>Intel Broadwell Wildcat Point-LP LPC Controller (Low Pin Count Bus)</string>
+				<key>name</key>
+				<string>Apple LPC Bus</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x2)</key>
 			<dict>
-				<key>compatible</key>
-				<string>pci8086,9c83</string>
-				<key>device-id</key>
-				<data>
-				g5wAAA==
-				</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>SATA Controller</string>
+				<key>model</key>
+				<string>Intel Broadwell Wildcat Point-LP SATA Controller [AHCI Mode]</string>
+				<key>name</key>
+				<string>SATA Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>SMC Bus Controller</string>
+				<key>model</key>
+				<string>Intel Wildcat Point-LP SMC Bus Controller</string>
+				<key>name</key>
+				<string>SMC Bus Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x6)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>Signal Processing Controller</string>
+				<key>model</key>
+				<string>Intel Broadwell Wildcat Point-LP Thermal Management Controller</string>
+				<key>name</key>
+				<string>Intel Thermal Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				AgAWFg==
+				BgAmFg==
 				</data>
 				<key>AAPL,slot-name</key>
-				<string>Internal@0,2,0</string>
-				<key>device-id</key>
-				<data>
-				FhYAAA==
-				</data>
+				<string>Internal</string>
 				<key>device_type</key>
-				<string>VGA compatible controller</string>
-				<key>disable-external-gpu</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>enable-hdmi20</key>
-				<data>
-				AQAAAA==
-				</data>
+				<string>VGA Compatible Controller</string>
 				<key>framebuffer-con1-enable</key>
 				<data>
 				AQAAAA==
@@ -804,10 +834,6 @@
 				<key>framebuffer-con2-index</key>
 				<data>
 				/////w==
-				</data>
-				<key>framebuffer-con2-type</key>
-				<data>
-				AAgAAA==
 				</data>
 				<key>framebuffer-fbmem</key>
 				<data>
@@ -825,14 +851,32 @@
 				<data>
 				AAAwAQ==
 				</data>
-				<key>framebuffer-unifiedmem</key>
-				<data>
-				AAAAgA==
-				</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
 				<key>model</key>
 				<string>Intel HD Graphics 5500</string>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x3,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot-2</string>
+				<key>PinConfigurations</key>
+				<data>
+				</data>
+				<key>device_type</key>
+				<string>Audio Device</string>
+				<key>layout-id</key>
+				<integer>32</integer>
+				<key>model</key>
+				<string>Intel Broadwell-U HDMI Audio Controller</string>
+				<key>name</key>
+				<string>HDMI Output</string>
+			</dict>
 		</dict>
+		<key>SetIntelBacklight</key>
+		<false/>
+		<key>SetIntelMaxBacklight</key>
+		<false/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -946,6 +990,20 @@
 				igKEwOtC
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				ILniAAAADzA=
+				</data>
+				<key>Replace</key>
+				<data>
+				ILniAAAAkJA=
+				</data>
+			</dict>
 		</array>
 		<key>KernelXCPM</key>
 		<true/>
@@ -1003,6 +1061,62 @@
 				<key>Replace</key>
 				<data>
 				AQAA6yU=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				RiV1VCUwNHgA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleBacklight</string>
+				<key>Replace</key>
+				<data>
+				RiV1VHh4eHgA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Boot graphics glitch, 10.13 beta (based on denskop patch)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AQAAdSI=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAA6yI=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>0x16260006,0x16260004/etc, 32MB BIOS, 19MB framebuffer, 9MB cursor bytes (credit RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAgAgAAUAE=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAwAQAAkAA=
 				</data>
 			</dict>
 		</array>
