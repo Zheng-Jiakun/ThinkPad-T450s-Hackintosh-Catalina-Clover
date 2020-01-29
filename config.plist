@@ -660,7 +660,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=0 keepsyms=1 brcmfx-country=#a applbkl=0</string>
+		<string>keepsyms=1 brcmfx-country=#a applbkl=0</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
