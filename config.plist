@@ -703,6 +703,60 @@
 		</dict>
 		<key>Properties</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>Host Bridge</string>
+				<key>model</key>
+				<string>Intel Broadwell-U PCI Express Main Host Bridge OPI</string>
+				<key>name</key>
+				<string>PCI Express Bridge</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>AAPL,current-available</key>
+				<data>
+				AAg0
+				</data>
+				<key>AAPL,current-extra</key>
+				<data>
+				AAiY
+				</data>
+				<key>AAPL,current-extra-in-sleep</key>
+				<data>
+				AAZA
+				</data>
+				<key>AAPL,current-in-sleep</key>
+				<data>
+				AAPo
+				</data>
+				<key>AAPL,device-internal</key>
+				<data>
+				Ag==
+				</data>
+				<key>AAPL,max-port-current-in-sleep</key>
+				<data>
+				AAg0
+				</data>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device-id</key>
+				<data>
+				sZwAAA==
+				</data>
+				<key>device_type</key>
+				<string>USB Controller</string>
+				<key>model</key>
+				<string>Intel 9 Series Chipset Family Wildcat Point-LP USB 3.1 xHCI Controller</string>
+				<key>name</key>
+				<string>USB 3.1 Controller</string>
+				<key>vendor-id</key>
+				<data>
+				hoAAAA==
+				</data>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -764,6 +818,49 @@
 				<string>Dell DW1820 (BCM4350) 802.11ac wireless</string>
 				<key>name</key>
 				<string>Airport</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1d,0x0)</key>
+			<dict>
+				<key>AAPL,current-available</key>
+				<data>
+				AAg0
+				</data>
+				<key>AAPL,current-extra</key>
+				<data>
+				AAiY
+				</data>
+				<key>AAPL,current-extra-in-sleep</key>
+				<data>
+				AAZA
+				</data>
+				<key>AAPL,current-in-sleep</key>
+				<data>
+				AAPo
+				</data>
+				<key>AAPL,device-internal</key>
+				<data>
+				Ag==
+				</data>
+				<key>AAPL,max-port-current-in-sleep</key>
+				<data>
+				AAg0
+				</data>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device-id</key>
+				<data>
+				ppwAAA==
+				</data>
+				<key>device_type</key>
+				<string>USB Controller</string>
+				<key>model</key>
+				<string>Intel 9 Series Chipset Family Wildcat Point-LP Enhanced USB 2.0 EHCI Controller</string>
+				<key>name</key>
+				<string>Enhanced USB Controller</string>
+				<key>vendor-id</key>
+				<data>
+				hoAAAA==
+				</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x0)</key>
 			<dict>
