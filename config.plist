@@ -982,10 +982,6 @@
 			<true/>
 		</dict>
 	</dict>
-	<key>DisableDrivers</key>
-	<array>
-		<string>CsmVideoDxe</string>
-	</array>
 	<key>GUI</key>
 	<dict>
 		<key>Hide</key>
