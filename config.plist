@@ -490,7 +490,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>keepsyms=1 brcmfx-country=#a applbkl=0 darkwake=no</string>
+		<string>keepsyms=1 brcmfx-country=#a applbkl=0 darkwake=0x00</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
